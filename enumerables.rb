@@ -23,9 +23,6 @@ def get_names(spicy_foods)
 end
 
 
-# given an array of spicy foods, **return an array of hashes** 
-# where the heat level of the food is greater than 5
-
 def spiciest_foods(spicy_foods) 
 
   spicy_foods.filter do |food|
@@ -35,36 +32,28 @@ def spiciest_foods(spicy_foods)
   end 
 end
 
-# given an array of spicy foods, **output to the terminal**
-# each spicy food in the following format: 
-# Buffalo Wings (American) | Heat Level: 🌶🌶🌶
-# HINT: you can use * with a string to produce the correct number of 🌶 emoji. 
-# "hello" * 3 == "hellohellohello"
-
-
- #  new_arr = spicy_foods.each do |hash|
-  #   hash.delete(:cuisine)
-  #  end 
-  # puts new_arr
-  # new_arr
 
 def print_spicy_foods(spicy_foods)
-
   spicy_foods.map do |food|
-  
-    food[:heat_level] = "🌶" * food[:heat_level]
-    puts spicy_foods
+   puts "#{food[:name]} (#{food[:cuisine]}) | Heat Level: #{'🌶' * food[:heat_level]}"
    end 
-
 end
 
 print_spicy_foods(spicy_foods)
 
 # given an array of spicy foods and a string representing a cuisine, **return a single hash**  
 # for the spicy food whose cuisine matches the cuisine being passed to the method
+
 def get_spicy_food_by_cuisine(spicy_foods, cuisine)
-  # your code here
+
+  new_hash = {}
+  spicy_foods.filter do |food|
+   food[:cuisine] == cuisine
+  end 
+
 end
+
+puts get_spicy_food_by_cuisine(spicy_foods, 'American')
 
 # Given an array of spicy foods, **return an array of hashes** 
 # sorted by heat level from lowest to highest
