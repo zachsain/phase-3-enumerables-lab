@@ -49,7 +49,7 @@ def get_spicy_food_by_cuisine(spicy_foods, cuisine)
 
 end
 
-puts get_spicy_food_by_cuisine(spicy_foods, 'American')
+
 
 # Given an array of spicy foods, **return an array of hashes** 
 # sorted by heat level from lowest to highest
@@ -74,10 +74,16 @@ end
 # given an array of spicy foods, return an integer representing 
 # the average heat level of all the spicy foods in the array
 
+
 def average_heat_level(spicy_foods)
+  
+  sum_of_heat = 0
   spicy_foods.each do |heat|
-  puts heat[:heat_level].sum(0.0)
+    sum_of_heat += heat[:heat_level]
   end
+
+sum_of_heat / spicy_foods.size
+  
 end
 
 average_heat_level(spicy_foods)
